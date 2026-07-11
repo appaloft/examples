@@ -1,0 +1,10 @@
+{
+  "name": "appaloft-example-oneclick",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Tiny Docker-backed HTTP demo for Appaloft one-click deploy.",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "license": "MIT"
+}

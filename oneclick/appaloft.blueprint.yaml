@@ -1,0 +1,29 @@
+schemaVersion: appaloft.blueprint/v1
+id: oneclick
+name: Oneclick
+version: 1.0.0
+summary: Tiny Docker-backed HTTP demo for Appaloft one-click deploy.
+description: Builds the oneclick example with its Dockerfile and exposes a small HTTP service.
+tags:
+  - demo
+  - docker
+  - one-click-deploy
+components:
+  - id: web
+    name: Web
+    kind: service
+    runtime:
+      strategy: dockerfile
+      dockerfilePath: Dockerfile
+    ports:
+      - name: http
+        containerPort: 3000
+        protocol: http
+        public: true
+    routes:
+      - port: http
+        pathPrefix: /
+profiles:
+  production:
+    label: Production
+    replicas: 1

@@ -1,0 +1,16 @@
+# Appaloft project intent for this example.
+# Works with CLI pure-SSH / control-plane deploys when the source is this repository root.
+name: appaloft-example-hello
+# Deploy from monorepo with baseDirectory=/hello (this directory).
+source:
+  path: .
+runtime:
+  method: docker-image
+  # When deploying from Git, Appaloft builds from the Dockerfile in this repo.
+  # This file documents the intended network/health contract for operators and agents.
+network:
+  internalPort: 3000
+access:
+  default: public
+health:
+  path: /health

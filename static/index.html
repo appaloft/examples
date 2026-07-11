@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Appaloft Hello</title>
+    <meta
+      name="description"
+      content="A tiny static website for testing Appaloft static deployments."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Static upload demo</p>
+          <h1 id="hero-title">Appaloft Hello</h1>
+          <p class="lede">
+            一个可以直接下载、直接上传、直接运行的静态网站。没有构建步骤，
+            没有后端依赖，只用 HTML、CSS 和一点点 JavaScript。
+          </p>
+          <div class="actions">
+            <a class="button primary" href="#checklist">查看测试项</a>
+            <a class="button secondary" href="https://appaloft.com">访问 Appaloft</a>
+          </div>
+        </div>
+
+        <div class="status-card" aria-label="Deployment status preview">
+          <div class="status-header">
+            <span class="logo-mark" aria-hidden="true">A</span>
+            <span>Appaloft Static</span>
+          </div>
+          <div class="status-grid">
+            <div>
+              <span class="metric-value">1</span>
+              <span class="metric-label">HTML page</span>
+            </div>
+            <div>
+              <span class="metric-value">0</span>
+              <span class="metric-label">build steps</span>
+            </div>
+            <div>
+              <span class="metric-value">100%</span>
+              <span class="metric-label">static</span>
+            </div>
+          </div>
+          <p id="clock" class="clock">Ready to upload</p>
+        </div>
+      </section>
+
+      <section id="checklist" class="checklist" aria-labelledby="checklist-title">
+        <div>
+          <p class="eyebrow">Upload checklist</p>
+          <h2 id="checklist-title">下载 ZIP 后即可测试</h2>
+        </div>
+        <ul>
+          <li>保留 `index.html`、`styles.css`、`script.js` 在同一目录。</li>
+          <li>上传仓库 ZIP 或解压后的文件夹。</li>
+          <li>打开部署 URL，看到这个页面就说明静态站点部署成功。</li>
+        </ul>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
