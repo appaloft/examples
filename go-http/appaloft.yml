@@ -1,0 +1,12 @@
+# Go stdlib HTTP example. baseDirectory=/go-http · port 8080
+name: appaloft-example-go-http
+source:
+  path: .
+runtime:
+  method: docker-image
+network:
+  internalPort: 8080
+access:
+  default: public
+health:
+  path: /health

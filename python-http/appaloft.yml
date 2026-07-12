@@ -1,0 +1,12 @@
+# Python stdlib HTTP example. baseDirectory=/python-http · port 8000
+name: appaloft-example-python-http
+source:
+  path: .
+runtime:
+  method: docker-image
+network:
+  internalPort: 8000
+access:
+  default: public
+health:
+  path: /health

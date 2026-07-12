@@ -1,0 +1,12 @@
+# Vite static export example. Deploy with baseDirectory=/vite-static.
+name: appaloft-example-vite-static
+source:
+  path: .
+runtime:
+  method: docker-image
+network:
+  internalPort: 8080
+access:
+  default: public
+health:
+  path: /health

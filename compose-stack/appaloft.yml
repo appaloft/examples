@@ -1,0 +1,14 @@
+# Docker Compose multi-service example. baseDirectory=/compose-stack
+# Public Appaloft supports runtime.strategy: docker-compose.
+name: appaloft-example-compose-stack
+source:
+  path: .
+runtime:
+  strategy: docker-compose
+  dockerComposeFilePath: docker-compose.yml
+network:
+  internalPort: 8080
+access:
+  default: public
+health:
+  path: /health

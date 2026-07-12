@@ -10,9 +10,14 @@ Cloud monorepo mirror (private maintenance): `appaloft-cloud/examples/`.
 
 | Directory | Purpose | Deploy path |
 | --- | --- | --- |
-| [`hello/`](./hello/) | Minimal Node HTTP app with Dockerfile + `/health` | `git-public` base directory `/hello` |
+| [`hello/`](./hello/) | Minimal Node HTTP + Dockerfile + `/health` | `git-public` · port `3000` · **launch smoke default** |
 | [`oneclick/`](./oneclick/) | One-click Blueprint (Dockerfile runtime) | remote Blueprint URL under `/oneclick` |
 | [`static/`](./static/) | Static site upload (no build) | ZIP/folder upload of `/static` |
+| [`vite-static/`](./vite-static/) | Vite build → nginx static | `git-public` · port `8080` |
+| [`python-http/`](./python-http/) | Python stdlib HTTP | `git-public` · port `8000` |
+| [`go-http/`](./go-http/) | Go stdlib HTTP | `git-public` · port `8080` |
+| [`env-service/`](./env-service/) | Non-secret env injection demo | `git-public` · port `3000` · `/api/config` |
+| [`compose-stack/`](./compose-stack/) | Docker Compose web + api | `docker-compose` · public port `8080` |
 
 ## Deploy hello (git-public)
 
@@ -39,6 +44,14 @@ Manifest:
 https://raw.githubusercontent.com/appaloft/examples/main/oneclick/appaloft.blueprint.yaml
 ```
 
+## Local smoke (all examples with scripts)
+
+```bash
+./scripts/smoke-all-local.sh
+```
+
+Each example also has `./scripts/smoke-local.sh` (where applicable). Official Cloud launch smoke remains on **`hello`**.
+
 ## Growth CTAs
 
 | Content | Destination |
@@ -53,6 +66,7 @@ https://raw.githubusercontent.com/appaloft/examples/main/oneclick/appaloft.bluep
 2. No Cloud commercial secrets or private package names.
 3. Prefer small images and zero private dependencies for smoke hosts.
 4. Keep official launch smoke on **`hello`** (`baseDirectory=/hello`).
+5. Non-3000 ports, multi-language, env injection, and compose are covered by dedicated directories above.
 
 ## License
 

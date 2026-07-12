@@ -1,0 +1,48 @@
+# Minimal multi-service stack for Appaloft docker-compose deploys.
+# Public HTTP: web (8080). Private sidecar: api (3000) on the compose network only.
+services:
+  api:
+    build:
+      context: ./api
+    environment:
+      PORT: "3000"
+      SERVICE_NAME: compose-api
+    expose:
+      - "3000"
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "fetch('http://127.0.0.1:3000/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))",
+        ]
+      interval: 10s
+      timeout: 3s
+      retries: 6
+      start_period: 5s
+
+  web:
+    build:
+      context: ./web
+    ports:
+      - "8080:8080"
+    environment:
+      PORT: "8080"
+      API_BASE_URL: http://api:3000
+      SERVICE_NAME: compose-web
+    depends_on:
+      api:
+        condition: service_healthy
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "fetch('http://127.0.0.1:8080/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))",
+        ]
+      interval: 10s
+      timeout: 3s
+      retries: 6
+      start_period: 5s

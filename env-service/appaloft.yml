@@ -1,0 +1,17 @@
+# Env injection demo. baseDirectory=/env-service
+# Non-secret defaults only — override at deploy time; never commit secrets.
+name: appaloft-example-env-service
+source:
+  path: .
+runtime:
+  method: docker-image
+network:
+  internalPort: 3000
+access:
+  default: public
+health:
+  path: /health
+env:
+  APP_NAME: appaloft-example-env-service
+  GREETING: Hello from env-service
+  FEATURE_FLAG: demo
