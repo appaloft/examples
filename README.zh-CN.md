@@ -18,6 +18,7 @@ Cloud 私仓维护镜像：`appaloft-cloud/examples/`。
 | [`go-http/`](./go-http/) | Go 标准库 HTTP | `git-public`，端口 `8080` |
 | [`env-service/`](./env-service/) | 非密钥环境变量注入演示 | `git-public`，`/api/config` |
 | [`compose-stack/`](./compose-stack/) | Docker Compose web + api | `docker-compose`，公开端口 `8080` |
+| [`sandbox-agent/`](./sandbox-agent/) | Chat-to-App、人工审批和 Preview-to-Promotion SDK 链路 | Appaloft 1.1+，**Private preview** |
 
 ## 部署 hello
 

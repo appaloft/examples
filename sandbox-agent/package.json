@@ -1,0 +1,26 @@
+{
+  "name": "appaloft-example-sandbox-agent",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Appaloft Sandbox Agent SDK examples",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "chat-to-app": "tsx src/chat-to-app.ts",
+    "approval-loop": "tsx src/approval-loop.ts",
+    "preview-promote": "tsx src/preview-promote.ts",
+    "test": "node --test test/contracts.test.mjs",
+    "typecheck": "tsc --noEmit",
+    "check": "npm run test && npm run typecheck"
+  },
+  "dependencies": {
+    "@appaloft/sdk": "^1.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0"
+  }
+}

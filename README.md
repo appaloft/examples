@@ -18,6 +18,7 @@ Cloud monorepo mirror (private maintenance): `appaloft-cloud/examples/`.
 | [`go-http/`](./go-http/) | Go stdlib HTTP | `git-public` · port `8080` |
 | [`env-service/`](./env-service/) | Non-secret env injection demo | `git-public` · port `3000` · `/api/config` |
 | [`compose-stack/`](./compose-stack/) | Docker Compose web + api | `docker-compose` · public port `8080` |
+| [`sandbox-agent/`](./sandbox-agent/) | Chat-to-app, human approval, and preview-to-promotion SDK flows | Appaloft 1.1+ · **Private preview** |
 
 ## Deploy hello (git-public)
 
