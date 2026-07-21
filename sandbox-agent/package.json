@@ -16,7 +16,7 @@
     "check": "npm run test && npm run typecheck"
   },
   "dependencies": {
-    "@appaloft/sdk": "^1.1.0"
+    "@appaloft/sdk": "^1.2.0"
   },
   "devDependencies": {
     "@types/node": "^24.0.0",

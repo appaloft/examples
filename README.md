@@ -18,7 +18,27 @@ Cloud monorepo mirror (private maintenance): `appaloft-cloud/examples/`.
 | [`go-http/`](./go-http/) | Go stdlib HTTP | `git-public` · port `8080` |
 | [`env-service/`](./env-service/) | Non-secret env injection demo | `git-public` · port `3000` · `/api/config` |
 | [`compose-stack/`](./compose-stack/) | Docker Compose web + api | `docker-compose` · public port `8080` |
-| [`sandbox-agent/`](./sandbox-agent/) | Chat-to-app, human approval, and preview-to-promotion SDK flows | Appaloft 1.1+ · **Private preview** |
+| [`sandbox-agent/`](./sandbox-agent/) | Chat-to-app, human approval, and preview-to-promotion SDK flows | Appaloft 1.2+ · **Private preview** |
+| [`sandbox-jobs/`](./sandbox-jobs/) | Deterministic code, offline documents, and bounded script jobs without Promotion | Appaloft 1.2+ · **Private preview** |
+
+## Sandbox Jobs
+
+Use [`sandbox-jobs/`](./sandbox-jobs/) when a SaaS needs an isolated task result rather than a
+published application. The examples write inputs, execute existing code without Pi, read structured
+results, and terminate the Sandbox in `finally`.
+
+| Workload | Sandbox | Agent | Promotion |
+| --- | --- | --- | --- |
+| Existing script execution | ✓ | — | — |
+| Natural-language analysis | ✓ | ✓ | — |
+| Document processing | ✓ | Optional | — |
+| Generate and publish an application | ✓ | ✓ | ✓ |
+| Public-web crawler | Waiting for egress allowlist | — | — |
+
+Start with the [Sandbox Jobs guide](./sandbox-jobs/README.md) or open the
+[code interpreter](./sandbox-jobs/src/code-interpreter.ts),
+[document processor](./sandbox-jobs/src/document-processing.ts), and
+[script runner](./sandbox-jobs/src/untrusted-script-runner.ts) directly.
 
 ## Deploy hello (git-public)
 

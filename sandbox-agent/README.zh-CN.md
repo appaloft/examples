@@ -4,7 +4,7 @@
 负责隔离 Sandbox、Pi Runtime、可观察 Run、不可变候选产物、Promotion 与交付 readback。Agent
 拿到的是受控工作区，不是 VPS 账户或生产凭据。
 
-> 成熟度：**Private preview**。示例需要 Appaloft 1.1+ control plane、匹配的
+> 成熟度：**Private preview**。示例需要 Appaloft 1.2+ control plane、匹配的
 > `@appaloft/sdk`、运营方配置的 Sandbox worker，以及固定版本和 digest 的 Pi template。当前 Agent
 > operation 使用 product session；这里不暗示已经存在长期 server credential。
 
