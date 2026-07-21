@@ -1,0 +1,7 @@
+order_id,region,product,quantity,unit_price
+1001,North,Widget,3,19.50
+1002,South,Gadget,2,44.00
+1003,North,Gadget,1,44.00
+1004,West,Widget,5,19.50
+1005,South,Widget,2,19.50
+1006,East,Gadget,20,44.00

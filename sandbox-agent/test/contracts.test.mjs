@@ -7,8 +7,8 @@ const source = (name) => readFile(new URL(`../src/${name}`, import.meta.url), "u
 test("chat-to-app nests Runtime and Run under a Sandbox", async () => {
   const content = await source("chat-to-app.ts");
   assert.match(content, /appaloft\.sandboxes\.create/);
-  assert.match(content, /appaloft\.sandboxes\.agents\.runtimes\.create/);
-  assert.match(content, /appaloft\.sandboxes\.agents\.runs\.create/);
+  assert.match(content, /sandbox\.agents\.create\(\{ harness: "pi" \}\)/);
+  assert.match(content, /agent\.runs\.create\(\{ task:/);
   assert.match(content, /networkPolicy: \{ mode: "deny", rules: \[\] \}/);
   assert.match(content, /expiresAt:/);
 });

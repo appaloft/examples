@@ -1,0 +1,26 @@
+{
+  "name": "appaloft-example-sandbox-jobs",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Appaloft Execution Sandbox job examples without Agent Runtime or Promotion",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "code-interpreter": "tsx src/code-interpreter.ts",
+    "document-processing": "tsx src/document-processing.ts",
+    "untrusted-script-runner": "tsx src/untrusted-script-runner.ts",
+    "test": "tsx --test test/*.test.ts",
+    "typecheck": "tsc --noEmit",
+    "check": "bun run test && bun run typecheck"
+  },
+  "dependencies": {
+    "@appaloft/sdk": "^1.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0"
+  }
+}

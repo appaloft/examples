@@ -5,7 +5,7 @@ production credentials to the agent. The application owns chat, user identity, a
 Appaloft owns the isolated Sandbox, Pi Runtime, observable Runs, immutable candidate, Promotion,
 and delivery readback.
 
-> Maturity: **Private preview**. These examples require an Appaloft 1.1+ control plane, a matching
+> Maturity: **Private preview**. These examples require an Appaloft 1.2+ control plane, a matching
 > `@appaloft/sdk`, an operator-provisioned Sandbox worker, and a pinned Pi template. Agent
 > operations currently use a product session; a long-lived server credential is not implied.
 

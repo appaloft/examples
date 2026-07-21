@@ -18,7 +18,26 @@ Cloud 私仓维护镜像：`appaloft-cloud/examples/`。
 | [`go-http/`](./go-http/) | Go 标准库 HTTP | `git-public`，端口 `8080` |
 | [`env-service/`](./env-service/) | 非密钥环境变量注入演示 | `git-public`，`/api/config` |
 | [`compose-stack/`](./compose-stack/) | Docker Compose web + api | `docker-compose`，公开端口 `8080` |
-| [`sandbox-agent/`](./sandbox-agent/) | Chat-to-App、人工审批和 Preview-to-Promotion SDK 链路 | Appaloft 1.1+，**Private preview** |
+| [`sandbox-agent/`](./sandbox-agent/) | Chat-to-App、人工审批和 Preview-to-Promotion SDK 链路 | Appaloft 1.2+，**Private preview** |
+| [`sandbox-jobs/`](./sandbox-jobs/) | 无 Promotion 的确定性代码、离线文档与受限脚本任务 | Appaloft 1.2+，**Private preview** |
+
+## Sandbox Jobs
+
+当 SaaS 需要的是隔离任务结果、而不是发布应用时，使用 [`sandbox-jobs/`](./sandbox-jobs/)。这些示例
+写入输入、在不使用 Pi 的情况下执行既有代码、读取结构化结果，并在 `finally` 中终止 Sandbox。
+
+| 工作负载 | Sandbox | Agent | Promotion |
+| --- | --- | --- | --- |
+| 已有脚本执行 | ✓ | — | — |
+| 自然语言分析 | ✓ | ✓ | — |
+| 文档处理 | ✓ | 可选 | — |
+| 生成并发布应用 | ✓ | ✓ | ✓ |
+| 公网爬虫 | 等待 egress allowlist | — | — |
+
+从 [Sandbox Jobs 指南](./sandbox-jobs/README.zh-CN.md)开始，也可以直接查看
+[code interpreter](./sandbox-jobs/src/code-interpreter.ts)、
+[document processor](./sandbox-jobs/src/document-processing.ts) 和
+[script runner](./sandbox-jobs/src/untrusted-script-runner.ts)。
 
 ## 部署 hello
 
